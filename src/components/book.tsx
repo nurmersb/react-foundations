@@ -1,8 +1,16 @@
-import { Book } from "./BookList";
 import "../App.css";
 import styled from "styled-components";
 interface Props {
   book: Book;
+}
+
+export interface Book {
+  image: string;
+  isbn13: string;
+  price: string;
+  url: string;
+  subtitle: string;
+  title: string;
 }
 
 const StyledTitle = styled.h1`
