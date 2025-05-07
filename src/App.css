@@ -1,0 +1,172 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+html {
+  background-color: #272936;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #272936;
+  min-height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+button {
+  font-size: calc(10px + 2vmin);
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.button-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: fit-content;
+  background-color: #272936;
+  color: white;
+}
+
+.aob-btn {
+  background-color: #272936;
+  color: white;
+  border: 1px	solid #00E0CB;
+  border-radius: 12px;
+  width: 575px;
+  padding: 10px 20px;
+  margin: 8px 0;
+  font-size: calc(4px + 2vmin);
+  cursor: pointer;
+
+  &:hover {
+    background-color: #00E0CB;
+    color: #272936;
+  }
+}
+
+.aob-input {
+  background-color: #0F434A;
+  color: white;
+  border: 1px solid #0F434A;
+  border-radius: 12px;
+  width: 75px;
+  padding: 4px 8px;
+  margin: 8px 0;
+  font-size: 2vmin;
+
+  &:hover {
+    background-color: #0F6A73;
+    color: #ffffff;
+  }
+
+  &:focus {
+    outline: none;
+    border: 1px solid #00E0CB;
+    background-color: #0F6A73;
+    color: #ffffff;
+  }
+}
+
+.book-list-container {
+  height: fit-content;
+  color: #ffffff
+}
+
+.booklist {
+  padding: 20px 0
+}
+
+.book-item {
+  background-color: #214554;
+  border-radius: 15px;
+  margin: 20px auto;
+  padding: 0 10px;
+  width: 75%;
+  display: flex;
+  flex-direction: row;
+}
+
+.bookcover-container {
+  width: 25%;
+  height: 100%;
+  display: flex;
+  justify-content: left;
+}
+
+.book-info-container {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}
+
+.badge-cheap {
+  background-color: #33B569;
+  position: relative;
+  top: -10px;
+  left: 96%;
+  width: fit-content;
+  height: fit-content;
+  border-radius: 3px;
+  padding: 2px 5px;
+}
+
+.badge-expensive {
+  background-color: #E30021;
+  position: relative;
+  top: -10px;
+  left: 94%;
+  width: fit-content;
+  height: fit-content;
+  border-radius: 3px;
+  padding: 2px 5px;
+}
+
+.no-books {
+  margin-top: 25vh;
+  font-size: calc(10px + 2vmin);
+}
+
+.spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 24px;
+    color: gray;
+}
