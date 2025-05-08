@@ -1,4 +1,4 @@
-import { FunctionComponent, useContext } from "react";
+import { FunctionComponent, useContext, useState } from "react";
 import { Book } from "./Book";
 import ThemeContext from "../Contexts/ThemeContext";
 
@@ -6,24 +6,21 @@ interface Props {
   books: Book[];
   amountOfBooks: number;
   setAmountOfBooks: (amount: number) => void;
+  isFormShown: boolean;
+  setIsFormShown: (isFormShown: boolean) => void;
 }
 
-const ButtonSection: FunctionComponent<Props> = ({books, amountOfBooks, setAmountOfBooks}: Props) => {
+const ButtonSection: FunctionComponent<Props> = (
+  {
+    books,
+    amountOfBooks,
+    setAmountOfBooks,
+    isFormShown,
+    setIsFormShown,
+  }: Props) => {
   const { theme, toggleTheme } = useContext(ThemeContext);
   return (
     <div className='button-section'>
-        <button className='aob-btn' onClick={() => setAmountOfBooks(amountOfBooks + 1)}>
-          Mehr Bücher
-        </button>
-        <button className='aob-btn' onClick={() => setAmountOfBooks(amountOfBooks - 1)}>
-          Weniger Bücher
-        </button>
-        <button className='aob-btn' onClick={() => setAmountOfBooks(Math.floor(Math.random() * books.length))}>
-          Randomisierte Anzahl der Bücher
-        </button>
-        <button className='aob-btn' onClick={() => setAmountOfBooks(books.length)}>
-          Alle Bücher
-        </button>
         <button className='aob-btn' onClick={() => {toggleTheme()}}>
           Change Theme (Child Component)
         </button>
@@ -33,6 +30,12 @@ const ButtonSection: FunctionComponent<Props> = ({books, amountOfBooks, setAmoun
           value={amountOfBooks}
           onChange={e => setAmountOfBooks(Math.min(Number(e.target.value), books.length))}
         />
+        < button
+          className="aob-btn"
+          onClick={() => setIsFormShown(!isFormShown)}
+        >
+          Open Form
+        </button>
       </div>
   );
 };

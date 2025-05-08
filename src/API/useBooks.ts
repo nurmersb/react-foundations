@@ -21,7 +21,7 @@ const useBooks = () => {
       })
   }, []);
 
-  return { loading, books, amountOfBooks, setAmountOfBooks };
+  return { loading, books, setBooks, amountOfBooks, setAmountOfBooks };
 }
 
 export default useBooks;

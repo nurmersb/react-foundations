@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import "../App.css";
 import styled from "styled-components";
 interface Props {
@@ -5,11 +6,11 @@ interface Props {
 }
 
 export interface Book {
-  image: string;
-  isbn13: string;
-  price: string;
-  url: string;
-  subtitle: string;
+  image?: string;
+  isbn13?: string;
+  price?: string;
+  url?: string;
+  subtitle?: string;
   title: string;
 }
 
@@ -42,7 +43,9 @@ const BookItem: React.FC<Props> = ({book}: Props)  =>  {
         <img src={book.image} alt={book.title} />
       </div>
       <div className="book-info-container">
-        <StyledTitle>{book.title}</StyledTitle>
+        <Link to={`/details/${book.isbn13}`}>
+          <StyledTitle>{book.title}</StyledTitle>
+        </Link>
         { 
           book.subtitle &&
           <StyledSubtitle>{book.subtitle}</StyledSubtitle>
