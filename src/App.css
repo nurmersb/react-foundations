@@ -103,11 +103,16 @@ button {
 
 .book-list-container {
   height: fit-content;
-  color: #ffffff
+  color: #ffffff;
+
+}
+.book-list-container.light {
+  color: black;
 }
 
 .booklist {
-  padding: 20px 0
+  padding: 20px 0;
+  background-color: #272936;
 }
 
 .book-item {

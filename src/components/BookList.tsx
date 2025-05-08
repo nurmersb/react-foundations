@@ -1,6 +1,7 @@
-import { FunctionComponent } from "react";
-import BookItem, { Book } from "./book";
+import { FunctionComponent, useContext } from "react";
+import BookItem, { Book } from "./Book";
 import "../App.css";
+import ThemeContext, { Themes } from "../Contexts/ThemeContext";
 
 interface Props {
   books: Book[];
@@ -8,11 +9,17 @@ interface Props {
 }
 
 const BookList: FunctionComponent<Props> = ({books, amountOfBooks}: Props) => {
+  const themeContext = useContext(ThemeContext);
 
   return (
     //return muss immer nur einen element zurückliefern. also alles in einen div reinpacken
-    <div className='book-list-container'>
-      <div className='book-list'>
+
+    <div className = {themeContext.theme === Themes.light ? 'book-list-container light' : 'book-list-container'}>
+      <div className = 'book-list'>
+        {
+          books.length === 0
+          && <div className="no-books">No books found</div>
+        }
         {
           books.length > 0
           && books?.slice(0, amountOfBooks).map(

@@ -1,5 +1,6 @@
-import { FunctionComponent } from "react";
-import { Book } from "./book";
+import { FunctionComponent, useContext } from "react";
+import { Book } from "./Book";
+import ThemeContext from "../Contexts/ThemeContext";
 
 interface Props {
   books: Book[];
@@ -8,7 +9,7 @@ interface Props {
 }
 
 const ButtonSection: FunctionComponent<Props> = ({books, amountOfBooks, setAmountOfBooks}: Props) => {
-
+  const { theme, toggleTheme } = useContext(ThemeContext);
   return (
     <div className='button-section'>
         <button className='aob-btn' onClick={() => setAmountOfBooks(amountOfBooks + 1)}>
@@ -22,6 +23,9 @@ const ButtonSection: FunctionComponent<Props> = ({books, amountOfBooks, setAmoun
         </button>
         <button className='aob-btn' onClick={() => setAmountOfBooks(books.length)}>
           Alle Bücher
+        </button>
+        <button className='aob-btn' onClick={() => {toggleTheme()}}>
+          Change Theme (Child Component)
         </button>
         <input
           className='aob-input'
