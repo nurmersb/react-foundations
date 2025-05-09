@@ -1,6 +1,7 @@
 import { Link } from "react-router";
 import "../App.css";
 import styled from "styled-components";
+
 interface Props {
   book: Book;
 }
